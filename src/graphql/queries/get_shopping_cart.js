@@ -4,7 +4,7 @@ export const GET_SHOPPING_CART_ITEMS = gql`
   query getShoppingCartItems {
     cartItems @client {
       title
-      quantity
+      price
     }
   }
 `;

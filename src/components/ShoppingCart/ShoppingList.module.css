@@ -1,0 +1,67 @@
+.mainContainer {
+  font-family: monospace;
+  font-size: 1.2em;
+  background: #d8c3a5;
+  padding: 1em 0;
+  margin-top: 1em;
+  min-width: 250px;
+}
+
+.mainContainer h3 {
+  border-bottom: 2px dashed #eae7dc;
+  border-top: 2px dashed #eae7dc;
+  color: #333;
+  line-height: 2;
+  margin-top: 0;
+}
+
+.cartItemsContainer {
+  display: 'flex';
+  flex-direction: 'column';
+  margin-bottom: 1em;
+  list-style-type: none;
+  padding: 0;
+}
+
+.cartItemsContainer li {
+  border-bottom: 1px dashed #8e8d8a;
+  color: #333;
+  font-family: monospace;
+  font-size: 1em;
+  text-align: left;
+  padding: 0.4em 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItemsContainer li button {
+  background: #d8c3a5;
+  border: 1px solid #8e8d8a;
+  color: #333;
+  cursor: pointer;
+  font-family: monospace;
+  padding: 0 0.3em 0.15em 0.3em;
+}
+
+.footerContainer {
+  text-align: left;
+  padding: 0.4em 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerContainer button {
+  font-family: monospace;
+  color: #333;
+  background: #e85a4f;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0.75em 1em;
+}
+
+.footerContainer .subtotalContainer {
+  padding: 0.75em 0;
+}

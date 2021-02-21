@@ -1,0 +1,56 @@
+.dogsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em;
+  list-style-type: none;
+  margin: 0;
+}
+
+.dogsList > li {
+  min-width: 200px;
+  margin-bottom: 1.25em;
+  margin-left: 1.25em;
+}
+
+.dogsList .dogInfoListContainer {
+  border: 1px solid #d8c3a5;
+  border-right: 4px solid #d8c3a5;
+  border-bottom: 4px solid #d8c3a5;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.dogsList .dogInfoListContainer .dogImageContainer {
+  padding: 0 0 0.5em 0;
+}
+
+.dogsList .dogInfoListContainer .dogImageContainer img {
+  width: 100%;
+}
+
+.dogsList .dogInfoListContainer .dogInfoList {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.2em;;
+}
+
+.dogsList .dogInfoListContainer .dogInfoList li {
+  font-size: 0.9em;
+  padding: 0.2em 0;
+}
+
+.dogsList .dogInfoListContainer .dogInfoList li:first-child {
+  font-size: 1.2em;
+}
+
+.dogsList .dogInfoListContainer .dogInfoList li:nth-child(2) {
+  color: #8e8d8a;
+  font-size: 0.8em;
+}
+
+.dogsList .dogInfoListContainer .dogInfoList li:last-child {
+  margin-top: 1em;
+}

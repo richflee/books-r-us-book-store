@@ -1,0 +1,41 @@
+.headerContainer {
+  align-items: center;
+  background: #eae7dc;
+  border-bottom: 1px solid #8e8d8a;
+  color: #8e8d8a;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3em 1.5em;
+}
+
+.accountInfoContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartContainer {
+  display: flex;
+  align-items: center;
+}
+
+.titleContainer {
+  text-align: left;
+}
+
+.cartNumberBadge {
+  background: #e85a4f;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+};
+
+.cartNumberBadge span {
+  display: inline-block;
+  vertical-align: middle;
+}
