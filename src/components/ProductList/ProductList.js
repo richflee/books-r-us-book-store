@@ -21,15 +21,15 @@ const ProductList = function() {
   }
 
   return (
-    <ul className={styles.dogsList}>
+    <ul className={styles.productList}>
       {data.products.map(product => {
         return (
           <li key={`id-${product.title}`}>
-            <div className={styles.dogInfoListContainer}>
-              <div className={styles.dogImageContainer}>
+            <div className={styles.infoListContainer}>
+              <div className={styles.productImageContainer}>
                 <img src="https://placedog.net/75/75" title="dog" />
               </div>
-              <ul className={styles.dogInfoList}>
+              <ul className={styles.infoList}>
                 <li>{product.title}</li>
                 <li>{product.category}</li>
                 <li>{product.price} BTC</li>

@@ -1,4 +1,4 @@
-.dogsList {
+.productList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -7,13 +7,13 @@
   margin: 0;
 }
 
-.dogsList > li {
+.productList > li {
   min-width: 200px;
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
 
-.dogsList .dogInfoListContainer {
+.productList .infoListContainer {
   border: 1px solid #d8c3a5;
   border-right: 4px solid #d8c3a5;
   border-bottom: 4px solid #d8c3a5;
@@ -22,35 +22,35 @@
   padding: 1em;
 }
 
-.dogsList .dogInfoListContainer .dogImageContainer {
+.productList .infoListContainer .productImageContainer {
   padding: 0 0 0.5em 0;
 }
 
-.dogsList .dogInfoListContainer .dogImageContainer img {
+.productList .infoListContainer .productImageContainer img {
   width: 100%;
 }
 
-.dogsList .dogInfoListContainer .dogInfoList {
+.productList .infoListContainer .dogInfoList {
   text-align: left;
   list-style-type: none;
   padding: 0;
   margin-bottom: 1.2em;;
 }
 
-.dogsList .dogInfoListContainer .dogInfoList li {
+.productList .infoListContainer .infoList li {
   font-size: 0.9em;
   padding: 0.2em 0;
 }
 
-.dogsList .dogInfoListContainer .dogInfoList li:first-child {
+.productList .infoListContainer .infoList li:first-child {
   font-size: 1.2em;
 }
 
-.dogsList .dogInfoListContainer .dogInfoList li:nth-child(2) {
+.productList .infoListContainer .infoList li:nth-child(2) {
   color: #8e8d8a;
   font-size: 0.8em;
 }
 
-.dogsList .dogInfoListContainer .dogInfoList li:last-child {
+.productList .infoListContainer .infoList li:last-child {
   margin-top: 1em;
 }
