@@ -1,3 +1,16 @@
+.productList, .infoList {
+  list-style-type: none;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  text-align: left;
+}
+
 .productList {
   display: flex;
   flex-direction: row;
@@ -37,20 +50,20 @@
   margin-bottom: 1.2em;;
 }
 
-.productList .infoListContainer .infoList li {
+.infoList li {
   font-size: 0.9em;
   padding: 0.2em 0;
 }
 
-.productList .infoListContainer .infoList li:first-child {
+.infoList li:first-child {
   font-size: 1.2em;
 }
 
-.productList .infoListContainer .infoList li:nth-child(2) {
+.infoList li:nth-child(2) {
   color: #8e8d8a;
   font-size: 0.8em;
 }
 
-.productList .infoListContainer .infoList li:last-child {
+.infoList li:last-child {
   margin-top: 1em;
 }

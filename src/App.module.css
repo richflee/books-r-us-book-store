@@ -1,0 +1,14 @@
+.appContainer {
+  padding: 1em;
+  display: flex;
+  margin: 0 auto;
+};
+
+.productListContainer {
+  flex-grow: 2;
+};
+
+.cartContainer {
+  flex-grow: 1;
+};
+
