@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Header from './components/Header/Header';
