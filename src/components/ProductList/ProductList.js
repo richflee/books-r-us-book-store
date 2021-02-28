@@ -1,12 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '../../graphql/queries/get_products';
+import { GET_BOOKS } from '../../graphql/queries/get_books';
 import AddToCartButton from '../AddToCartButton/AddToCartButton';
 import styles from './ProductList.module.css';
+import Truncate from 'react-truncate';
 
 const ProductList = function() {
 
-  const { error, data, loading } = useQuery(GET_PRODUCTS);
+  const { error, data, loading } = useQuery(GET_BOOKS);
 
   if (loading) {    
     return (
@@ -22,19 +24,23 @@ const ProductList = function() {
 
   return (
     <ul className={styles.productList}>
-      {data.products.map(product => {
+      {data.books.map(book => {
         return (
-          <li key={`id-${product.title}`}>
+          <li key={`id-${book.title}`}>
             <div className={styles.infoListContainer}>
               <div className={styles.productImageContainer}>
                 <img src="https://placedog.net/75/75" title="dog" />
               </div>
               <ul className={styles.infoList}>
-                <li>{product.title}</li>
-                <li>{product.category}</li>
-                <li>{product.price} BTC</li>
+                <li>
+                  <Truncate lines={1} ellipsis={<span>...</span>}>
+                    {book.title}
+                  </Truncate>
+                </li>
+                <li>{book.genre}</li>
+                <li>{book.price} BTC</li>
               </ul>
-              <AddToCartButton name={product.title} price={product.price} />
+              <AddToCartButton name={book.title} price={book.price} />
             </div>
           </li>
         )

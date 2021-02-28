@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_SHOPPING_CART_ITEMS } from '../../graphql/queries/get_shopping_cart';
 import styles from './ShoppingList.module.css';
 import { shoppingCartVar } from './reactiveVars';
+import Truncate from 'react-truncate';
 
 const ShoppingCart = () => {
 
@@ -26,7 +27,9 @@ const ShoppingCart = () => {
         {data.cartItems.map((cartItem, index) => {
           return (
             <li key={`${index}-${cartItem.title}`}>
-              <div><strong>1x</strong> {cartItem.title}</div>
+              <Truncate lines={1} ellipsis={<span>...</span>}>
+                <strong>1x</strong> {cartItem.title}
+              </Truncate>
               <button onClick={() => removeFromCart(cartItem)}>x</button>
             </li>
           )

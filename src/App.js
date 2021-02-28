@@ -1,4 +1,3 @@
-import './App.css';
 import styles from './App.module.css';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Header from './components/Header/Header';

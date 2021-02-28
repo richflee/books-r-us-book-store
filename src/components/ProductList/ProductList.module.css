@@ -21,7 +21,9 @@
 }
 
 .productList > li {
+  flex: 1 1 0px;
   min-width: 200px;
+  max-width: 400px;
   margin-bottom: 1.25em;
   margin-left: 1.25em;
 }
