@@ -1,8 +1,10 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import { GET_BOOKS } from '../../graphql/queries/get_books';
 import AddToCartButton from '../AddToCartButton/AddToCartButton';
 import styles from './ProductList.module.css';
-import { GET_BOOKS } from '../../graphql/queries/get_books';
+import Truncate from 'react-truncate';
+import AddToFavouritesButton from '../AddToFavouritesButton/AddToFavouritesButton';
 
 const ProductList = function() {
 
@@ -30,11 +32,16 @@ const ProductList = function() {
                 <img src="https://placedog.net/75/75" title="dog" />
               </div>
               <ul className={styles.infoList}>
-                <li>{book.title}</li>
-                <li>{book.category}</li>
+                <li>
+                  <Truncate lines={1} ellipsis={<span>...</span>}>
+                    {book.title}
+                  </Truncate>
+                </li>
+                <li>{book.genre}</li>
                 <li>{book.price} BTC</li>
               </ul>
               <AddToCartButton name={book.title} price={book.price} />
+              <AddToFavouritesButton book={book} />
             </div>
           </li>
         )

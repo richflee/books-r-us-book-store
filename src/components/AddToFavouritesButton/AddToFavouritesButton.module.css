@@ -1,0 +1,16 @@
+.btn {
+  border: 1px solid #e85a4f;
+  background: transparent;
+  color: #e85a4f;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5em;
+  padding: 0.6em 1em;
+  width: 100%;
+}
+
+.btn:hover {
+  background: #e85a4f;
+  color: #fff;
+}

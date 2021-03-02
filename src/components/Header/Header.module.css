@@ -1,7 +1,7 @@
 .headerContainer {
   align-items: center;
   background: #eae7dc;
-  border-bottom: 1px solid #8e8d8a;
+  border-bottom: 1px dashed #8e8d8a;
   color: #8e8d8a;
   display: flex;
   justify-content: space-between;
@@ -21,6 +21,10 @@
 
 .titleContainer {
   text-align: left;
+}
+
+.titleContainer h2 {
+  font-family: monospace;
 }
 
 .cartNumberBadge {

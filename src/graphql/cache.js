@@ -13,12 +13,12 @@ export default new InMemoryCache({
         }
       }
     },
-    Product: {
-      keyFields: ["productId"],
+    Book: {
+      keyFields: ["bookId"],
       fields: {
-        title: {
-          read(value = "UNKNOWN") {
-            return value ? `${value}` : '🐶🐶🐶';
+        genre: {
+          read(value) {
+            return value || "ALL";
           }
         }
       }
