@@ -2,6 +2,7 @@ import styles from './App.module.css';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Header from './components/Header/Header';
 import ProductList from './components/ProductList/ProductList';
+import FavouriteBooksList from './components/FavouriteBooks/FavouriteBooksList';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className={styles.appContainer}>
         <div className={styles.productListContainer}>
           <ProductList />
+          <FavouriteBooksList />
         </div>
         <div className={styles.cartContainer}>
           <ShoppingCart />

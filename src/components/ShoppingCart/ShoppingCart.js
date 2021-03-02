@@ -14,7 +14,8 @@ const ShoppingCart = () => {
   }, 0);
 
   const removeFromCart = (cartItem) => {
-    const cartItems = shoppingCartVar().filter(ci => ci.title !== cartItem.title);
+    const existing = shoppingCartVar();
+    const cartItems = existing.filter(ci => ci.title !== cartItem.title);
     shoppingCartVar(cartItems);
   }
 
