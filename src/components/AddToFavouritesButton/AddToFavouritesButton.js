@@ -1,6 +1,7 @@
 import { gql, useMutation } from '@apollo/client';
 import React from 'react';
 import styles from './AddToFavouritesButton.module.css';
+import { GET_FAVOURITE_BOOKS } from '../../graphql/queries/get_favourite_books';
 
 export const TOGGLE_FAVOURITE = gql`
   mutation ToggleFavourite ($bookId: String!) {
@@ -9,6 +10,7 @@ export const TOGGLE_FAVOURITE = gql`
       title
       genre
       price
+      isFavourite
       author {
         id
         name
@@ -19,7 +21,43 @@ export const TOGGLE_FAVOURITE = gql`
 
 const AddToFavouritesButton = function({ book }) {
 
-  const [mutate] = useMutation(TOGGLE_FAVOURITE);
+  const [mutate] = useMutation(TOGGLE_FAVOURITE, 
+    {
+      update (cache, { data }) {
+        console.log('data', data);
+        const newFavFromResponse = data?.toggleFavourite;
+        const existingFavs = cache.readQuery({
+          query: GET_FAVOURITE_BOOKS,
+        });
+
+        if (existingFavs.favouriteBooks && newFavFromResponse) {
+
+          if (newFavFromResponse.isFavourite) {
+            cache.writeQuery({
+              query: GET_FAVOURITE_BOOKS,
+              data: {
+                favouriteBooks: [
+                    ...existingFavs.favouriteBooks,
+                    { __typename: 'Book', ...newFavFromResponse },
+                  ],
+              },
+            });
+          } else {
+
+            const updatedFavs = existingFavs.favouriteBooks.filter(fb => fb.bookId !== newFavFromResponse.bookId);
+
+            cache.writeQuery({
+              query: GET_FAVOURITE_BOOKS,
+              data: {
+                favouriteBooks: updatedFavs,
+              },
+            });
+          }
+          
+        }
+      }
+    }
+  );
 
   const toggleFavourite = () => {
     mutate({ variables: { bookId: book.bookId } });
