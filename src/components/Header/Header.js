@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.titleContainer}>
-        <h2>D O G S R' U S</h2>
+        <h2>BOOKS R' US</h2>
       </div>
       <div className={styles.accountInfoContainer}>
         <div className={styles.cartContainer}>
