@@ -17,32 +17,9 @@ export const TOGGLE_FAVOURITE = gql`
   }
 `
 
-// {
-//   update (cache, { data }) {
-//     const newTodoFromResponse = data?.addTodo.todo;
-//     const existingTodos = cache.readQuery({
-//       query: GET_ALL_TODOS,
-//     });
-
-//     if (existingTodos && newTodoFromResponse) {
-//       cache.writeQuery({
-//         query: GET_ALL_TODOS,
-//         data: {
-//           todos: {
-//             edges: [
-//               ...existingTodos?.todos.edges,
-//               { __typename: 'TodosEdge', node: newTodoFromResponse },
-//             ],
-//           },
-//         },
-//       });
-//     }
-//   }
-// }
-
 const AddToFavouritesButton = function({ book }) {
 
-  const [mutate, { data, error }] = useMutation(TOGGLE_FAVOURITE);
+  const [mutate] = useMutation(TOGGLE_FAVOURITE);
 
   const toggleFavourite = () => {
     mutate({ variables: { bookId: book.bookId } });
