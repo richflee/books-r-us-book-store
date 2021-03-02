@@ -41,7 +41,6 @@ const ProductList = function() {
                 <li>{book.price} BTC</li>
               </ul>
               <AddToCartButton name={book.title} price={book.price} />
-              <AddToFavouritesButton book={book} />
             </div>
           </li>
         )

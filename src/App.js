@@ -11,7 +11,6 @@ function App() {
       <div className={styles.appContainer}>
         <div className={styles.productListContainer}>
           <ProductList />
-          <FavouriteBooksList />
         </div>
         <div className={styles.cartContainer}>
           <ShoppingCart />

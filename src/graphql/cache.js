@@ -14,14 +14,7 @@ export default new InMemoryCache({
       }
     },
     Book: {
-      keyFields: ["bookId"],
-      fields: {
-        genre: {
-          read(value) {
-            return value || "ALL";
-          }
-        }
-      }
+      keyFields: ["bookId"]
     }
   }
 });

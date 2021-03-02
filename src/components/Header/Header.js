@@ -2,17 +2,12 @@ import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_SHOPPING_CART_ITEMS } from '../../graphql/queries/get_shopping_cart';
 import styles from './Header.module.css';
+import { shoppingCartVar } from '../ShoppingCart/reactiveVars';
 
 const Header = () => {
 
-  const { error, data } = useQuery(GET_SHOPPING_CART_ITEMS);
-
-  if (error) {
-    console.log('error', error);
-    return (
-      'bla'
-    )
-  }
+  const data = { cartItems: [] };
+  // const { data, error } = useQuery(GET_SHOPPING_CART_ITEMS);
 
   return (
     <div className={styles.headerContainer}>

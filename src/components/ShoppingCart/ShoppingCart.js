@@ -1,25 +1,25 @@
 import React, { Fragment } from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_SHOPPING_CART_ITEMS } from '../../graphql/queries/get_shopping_cart';
 import styles from './ShoppingList.module.css';
-import { shoppingCartVar } from './reactiveVars';
 import Truncate from 'react-truncate';
+import { GET_SHOPPING_CART_ITEMS } from '../../graphql/queries/get_shopping_cart';
+import { useQuery } from '@apollo/client';
 
 const ShoppingCart = () => {
 
-  const { error, data } = useQuery(GET_SHOPPING_CART_ITEMS);
+  const data = { cartItems: [] };
+  // const { data, error } = useQuery(GET_SHOPPING_CART_ITEMS)
 
   const cartSubtotal = data.cartItems.reduce((subTotal, cartItem) => {
     return subTotal + cartItem.price;
   }, 0);
 
-  const removeFromCart = (cartItem) => {
-    const existing = shoppingCartVar();
-    const cartItems = existing.filter(ci => ci.title !== cartItem.title);
-    shoppingCartVar(cartItems);
-  }
+  // const removeFromCart = (cartItem) => {
+  //   const existing = shoppingCartVar();
+  //   const cartItems = existing.filter(ci => ci.title !== cartItem.title);
+  //   shoppingCartVar(cartItems);
+  // }
 
-  const noItems = error || !data || !data.cartItems.length;
+  const noItems = false; // error || !data || !data.cartItems.length;
 
   return (
     <div className={styles.mainContainer}>
@@ -31,7 +31,6 @@ const ShoppingCart = () => {
               <Truncate lines={1} ellipsis={<span>...</span>}>
                 <strong>1x</strong> {cartItem.title}
               </Truncate>
-              <button onClick={() => removeFromCart(cartItem)}>x</button>
             </li>
           )
         })}
