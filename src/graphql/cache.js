@@ -22,16 +22,6 @@ export default new InMemoryCache({
           }
         }
       }
-    },
-    Product: {
-      keyFields: ["productId"],
-      fields: {
-        title: {
-          read(value = "UNKNOWN") {
-            return value ? `${value}` : '🐶🐶🐶';
-          }
-        }
-      }
     }
   }
 });
