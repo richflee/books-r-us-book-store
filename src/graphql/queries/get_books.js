@@ -7,6 +7,7 @@ export const GET_BOOKS = gql`
       title
       genre
       price
+      isFavourite
       author {
         id
         name

@@ -1,0 +1,4 @@
+.productListContainer {
+  flex-grow: 2;
+  max-width: 75%;
+}

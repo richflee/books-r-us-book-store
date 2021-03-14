@@ -2,6 +2,7 @@ import { gql, useMutation } from '@apollo/client';
 import React from 'react';
 import styles from './AddToFavouritesButton.module.css';
 import { GET_FAVOURITE_BOOKS } from '../../graphql/queries/get_favourite_books';
+import classNames from "classnames";
 
 export const TOGGLE_FAVOURITE = gql`
   mutation ToggleFavourite ($bookId: String!) {
@@ -63,9 +64,14 @@ const AddToFavouritesButton = function({ book }) {
     mutate({ variables: { bookId: book.bookId } });
   };
 
+  console.log('isFav', book.isFavourite, book.title);
+
+  const buttonText = book.isFavourite ? "Remove from favs" : "Add to favs";
+
   return (
     <div>
-      <button className={styles.btn} onClick={() => toggleFavourite()}>Add to favs</button>
+      <button className={classNames(styles.btn, { [styles.activeState]: book.isFavourite })}
+        onClick={() => toggleFavourite()}>{buttonText}</button>
     </div>
   );
 };

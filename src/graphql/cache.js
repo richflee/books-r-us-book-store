@@ -1,5 +1,5 @@
 import { InMemoryCache } from "@apollo/client";
-import { shoppingCartVar } from "../components/ShoppingCart/reactiveVars";
+import { isCartSidebarVisible, shoppingCartVar } from "../components/ShoppingCart/reactiveVars";
 
 
 export default new InMemoryCache({
@@ -9,6 +9,11 @@ export default new InMemoryCache({
         cartItems: {
           read() {
             return shoppingCartVar();
+          }
+        },
+        isShoppingCartSidebarVisible: {
+          read() {
+            return isCartSidebarVisible();
           }
         }
       }

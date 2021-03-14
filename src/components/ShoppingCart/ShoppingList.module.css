@@ -2,9 +2,14 @@
   font-family: monospace;
   font-size: 1.2em;
   background: #d8c3a5;
-  padding: 1em 0;
-  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   min-width: 250px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  right: 0;
 }
 
 .mainContainer h3 {
@@ -44,14 +49,37 @@
   padding: 0 0.3em 0.15em 0.3em;
 }
 
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.closeButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0.5em;
+}
+
+.closeButtonContainer button {
+  background: none;
+  border: 1px solid #e85a4f;
+  color: #e85a4f;
+  cursor: pointer;
+  margin: 0 0 1.2em 0;
+}
+
 .footerContainer {
+  margin-top: auto;
+}
+
+.footerContentContainer {
   text-align: left;
   padding: 0.4em 1em;
   display: flex;
   flex-direction: column;
 }
 
-.footerContainer button {
+.footerContentContainer button {
   font-family: monospace;
   color: #333;
   background: #e85a4f;
@@ -63,6 +91,6 @@
   padding: 0.75em 1em;
 }
 
-.footerContainer .subtotalContainer {
+.footerContentContainer .subtotalContainer {
   padding: 0.75em 0;
 }

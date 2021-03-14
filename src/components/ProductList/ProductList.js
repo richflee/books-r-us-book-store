@@ -5,10 +5,12 @@ import AddToCartButton from '../AddToCartButton/AddToCartButton';
 import styles from './ProductList.module.css';
 import Truncate from 'react-truncate';
 import AddToFavouritesButton from '../AddToFavouritesButton/AddToFavouritesButton';
+import { useHistory } from "react-router-dom";
 
 const ProductList = function() {
 
   const { error, data, loading } = useQuery(GET_BOOKS);
+  const history = useHistory();
 
   if (loading) {    
     return (
@@ -22,11 +24,15 @@ const ProductList = function() {
     )
   }
 
+  const gridItemClickHandler = () => {
+    history.push("/product");
+  };
+
   return (
     <ul className={styles.productList}>
       {data.books.map(book => {
         return (
-          <li key={`id-${book.title}`}>
+          <li key={`id-${book.title}`} onClick={gridItemClickHandler}>
             <div className={styles.infoListContainer}>
               <div className={styles.productImageContainer}>
                 <img src="https://placedog.net/75/75" title="dog" />

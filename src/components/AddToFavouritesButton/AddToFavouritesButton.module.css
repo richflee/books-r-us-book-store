@@ -10,6 +10,11 @@
   width: 100%;
 }
 
+.btn.activeState {
+  background: #e85a4f;
+  color: #fff;
+}
+
 .btn:hover {
   background: #e85a4f;
   color: #fff;
