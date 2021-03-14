@@ -1,0 +1,43 @@
+.infoListContainer {
+  border: 1px solid #d8c3a5;
+  border-right: 4px solid #d8c3a5;
+  border-bottom: 4px solid #d8c3a5;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.infoListContainer .productImageContainer {
+  padding: 0 0 0.5em 0;
+}
+
+.infoListContainer .productImageContainer img {
+  width: 100%;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  text-align: left;
+}
+
+.infoList li {
+  font-size: 0.9em;
+  padding: 0.2em 0;
+}
+
+.infoList li:first-child {
+  font-size: 1.2em;
+}
+
+.infoList li:nth-child(2) {
+  color: #8e8d8a;
+  font-size: 0.8em;
+}
+
+.infoList li:last-child {
+  margin-top: 1em;
+}
